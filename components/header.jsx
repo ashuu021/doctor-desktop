@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Button } from "./ui/button";
 
 const Header = () => {
   return (
@@ -15,6 +17,26 @@ const Header = () => {
             className="h-10 w-auto object-contain"
           />
         </Link>
+<div>
+            <SignedOut>
+            <SignInButton>
+              <Button variant="secondary">Sign In</Button>
+            </SignInButton>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10",
+                  userButtonPopoverCard: "shadow-xl",
+                  userPreviewMainIdentifier: "font-semibold",
+                },
+              }}
+              afterSignOutUrl="/"
+            />
+          </SignedIn>
+            </div>
       </nav>
     </header>
   );
