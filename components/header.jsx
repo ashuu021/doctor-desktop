@@ -4,7 +4,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header>
+    <header className=" fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-10 supports-backdrop-filter:bg-baclground/60" >
       <nav>
         <Link href="/">
           <Image
